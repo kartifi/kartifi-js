@@ -1,0 +1,12 @@
+{
+  "name": "kartifi-reborn",
+  "version": "0.0.1",
+  "author": "Umair Bussi",
+  "license": "MIT",
+  "private": "true",
+  "workspaces": [
+    "packages/core",
+    "packages/kartifi-plugin-stripe",
+    "packages/kartifi-plugin-shippo"
+  ]
+}

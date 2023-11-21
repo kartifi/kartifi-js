@@ -1,0 +1,29 @@
+services:
+  app:
+    image: epicname/pen
+    tty: true
+    command: /bin/bash -c "source ~/.bashrc && npm install && npm run dev"
+    ports:
+      - 3000:3000
+    working_dir: /app
+    volumes:
+      - ./:/app
+      - exclude:/app/node_modules/
+    environment:
+      NODE_ENV: docker
+      POSTGRESQL_HOST: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: kartify
+  postgres:
+    image: postgres:bookworm
+    volumes:
+      - kartify-postgres-data:/var/lib/mysql
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: kartify 
+
+volumes:
+  kartify-postgres-data:
+  exclude:

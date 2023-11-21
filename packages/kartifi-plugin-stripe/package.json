@@ -1,0 +1,22 @@
+{
+  "name": "@kartifi/plugin-stripe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Umair Bussi",
+  "license": "ISC",
+  "dependencies": {
+    "@kartifi/core": "*",
+    "@kartifi/plugin-shippo": "*",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "stripe": "^14.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}

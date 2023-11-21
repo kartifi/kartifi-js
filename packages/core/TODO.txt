@@ -1,0 +1,26 @@
+TODO:
+- [ ] Generator
+    - [ ] For new project
+    - [ ] Boilerplate for new entity
+    model
+    service
+    controller
+    routes
+    openapi
+    set openapi schema in setup
+    
+- [ ] Authentication
+    - [ ] Joi validation or Class Validator
+    - [x] Email verification
+    - [x] Password reset
+    - [ ] Logout user on password reset?
+    - [ ] OAUTH?
+    - [ ] JWT?
+    - [ ] API Keys?
+
+- [ ] Authorization
+
+- [ ] Multi-tenancy
+
+- [ ] Deployment
+    
