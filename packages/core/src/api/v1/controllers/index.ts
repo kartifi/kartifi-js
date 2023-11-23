@@ -31,6 +31,9 @@ import { AddressesController } from "./addresses";
 import { TaxesService } from "../services/tax";
 import { TaxesController } from "./tax";
 import { TaxesRouter } from "../routes/taxes";
+import { OrdersRouter } from "../routes/orders";
+import { OrdersService } from "../services/orders";
+import { OrdersController } from "./orders";
 
 export default function (appContainer) {
     const productsService = new ProductsService();
@@ -76,5 +79,9 @@ export default function (appContainer) {
     const taxesService = new TaxesService();
     const taxesController = new TaxesController(taxesService);
     new TaxesRouter(appContainer, taxesController);
+
+    const ordersService = new OrdersService();
+    const ordersController = new OrdersController(ordersService);
+    new OrdersRouter(appContainer, ordersController);
 
 }

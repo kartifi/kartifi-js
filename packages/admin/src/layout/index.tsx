@@ -8,9 +8,10 @@ export function Layout() {
             <div className="flex">
                 <Sidebar>
                     <Sidebar.ItemGroup>
-                        <Sidebar.Item>
-                            <Link to="/">Products</Link>
-                        </Sidebar.Item>
+
+                        <Link to="/products">Products</Link>
+                        <br />
+                        <Link to="/orders">Orders</Link>
 
                     </Sidebar.ItemGroup>
                 </Sidebar>

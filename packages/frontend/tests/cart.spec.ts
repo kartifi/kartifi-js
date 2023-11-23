@@ -1,8 +1,8 @@
 import { test, expect, chromium } from '@playwright/test';
 
-test('Buy a product', async () => {
-  const browser = await chromium.launch({ headless: false });
-  const page = await browser.newPage();
+test('Buy a product', async ({ page }) => {
+  // const browser = await chromium.launch({ headless: false });
+  // const page = await browser.newPage();
   await page.goto('http://localhost:5173/products/1');
 
   await page.selectOption('#select-Color', 'Red');
@@ -50,7 +50,7 @@ test('Buy a product', async () => {
 
   expect(page.getByRole('heading', { name: 'Thanks for your order!' })).toBeDefined();
 
-  await browser.close();
+  // await browser.close();
 
 });
 

@@ -6,6 +6,8 @@
   "private": "true",
   "workspaces": [
     "packages/core",
+    "packages/frontend",
+    "packages/admin",
     "packages/kartifi-plugin-stripe",
     "packages/kartifi-plugin-shippo"
   ]
