@@ -5,6 +5,7 @@ printf 'Welcome:'
 WORKDIR=/app
 
 cd $WORKDIR
+yarn install
 yarn run build:stripe
 yarn run build:shippo
 yarn install
