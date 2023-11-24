@@ -16,10 +16,8 @@ RUN npm install -g yarn \
 
 WORKDIR /app
 
-COPY package.json yarn.lock ./
+COPY . .
 
 RUN yarn install --verbose --frozen-lockfile --production=false
-
-COPY . .
 
 RUN yarn workspaces run build
