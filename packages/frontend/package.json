@@ -9,7 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest",
-    "test:play": "playwright test",
+    "test:play": "npx playwright test",
     "test:e2e": "PWTEST_WATCH=1 playwright test "
   },
   "dependencies": {
