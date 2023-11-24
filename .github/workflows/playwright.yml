@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the stack
-      run: docker-compose up -d --wait
+      run: docker-compose up --exit-code-from app
       env:
         DOTENV_KEY: ${{ secrets.DOTENV_KEY }}
     - name: Run tests
