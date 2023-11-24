@@ -10,19 +10,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 18
-    - name: Install dependencies
-      run: yarn install --immutable --immutable-cache --check-cache
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
-    - name: Run Playwright tests
-      run: npx playwright test
-      working-directory: packages/frontend
-    - uses: actions/upload-artifact@v3
+    - name: Build the stack
+      run: docker-compose up -d --build
+    - name: Run tests
+      run: docker-compose exec -w /app/packages/frontend app yarn run test:play
+    - name: Stop containers
       if: always()
-      with:
-        name: playwright-report
-        path: playwright-report/
-        retention-days: 30
+      run: docker-compose down
+    # - name: Install dependencies
+    #   run: yarn install --immutable --immutable-cache --check-cache
+    # - name: Install Playwright Browsers
+    #   run: npx playwright install --with-deps
+    # - name: Run Playwright tests
+    #   run: npx playwright test
+    #   working-directory: packages/frontend
+    # - uses: actions/upload-artifact@v3
+    #   if: always()
+    #   with:
+    #     name: playwright-report
+    #     path: playwright-report/
+    #     retention-days: 30
