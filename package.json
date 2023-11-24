@@ -12,7 +12,7 @@
     "packages/kartifi-plugin-shippo"
   ],
   "scripts": {
-    "build:stripe": "tsc -p packages/kartifi-plugin-stripe/tsconfig.json -b",
-    "build:shippo": "tsc -p packages/kartifi-plugin-shippo/tsconfig.json -b"
+    "build:stripe": "tsc -p packages/kartifi-plugin-stripe/tsconfig.json",
+    "build:shippo": "tsc -p packages/kartifi-plugin-shippo/tsconfig.json"
   }
 }
