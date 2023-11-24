@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DOTENV_KEY: ${{ secrets.DOTENV_KEY }}
+      NODE_ENV: test
     steps:
     - uses: actions/checkout@v3
     - name: Build the stack
