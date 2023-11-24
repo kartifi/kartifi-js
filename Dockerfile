@@ -12,3 +12,13 @@ RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/* \
     && nvm install $NODE_VERSION \
     && npm install -g yarn \
     && yarn global add pm2 typescript
+
+WORKDIR /app
+
+COPY package.json yarn.lock ./
+
+RUN yarn install --frozen-lockfile
+
+COPY . .
+
+RUN yarn workspaces run build

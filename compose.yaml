@@ -11,14 +11,14 @@ services:
       interval: 1m30s
       timeout: 30s
       retries: 5
-      start_period: 2m
+      start_period: 40s
     ports:
       - 3000:3000
       - 5173:5173
       - 5174:5174
-    working_dir: /app
+    # working_dir: /app
     volumes:
-      - ./:/app
+      # - ./:/app
       - exclude:/app/node_modules/
     environment:
       NODE_ENV: ${NODE_ENV}
