@@ -18,7 +18,7 @@ WORKDIR /app
 
 COPY package.json yarn.lock ./
 
-RUN yarn install --frozen-lockfile --production=false
+RUN yarn install --verbose --frozen-lockfile --production=false
 
 COPY . .
 
