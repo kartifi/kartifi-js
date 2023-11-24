@@ -11,4 +11,4 @@ RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/* \
     && . /root/.bashrc \
     && nvm install $NODE_VERSION \
     && npm install -g yarn \
-    && yarn global add pm2
+    && yarn global add pm2 typescript

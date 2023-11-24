@@ -12,10 +12,6 @@ jobs:
       DOTENV_KEY: ${{ secrets.DOTENV_KEY }}
     steps:
     - uses: actions/checkout@v3
-    - name: Get enivronment variables
-      run: |
-        printenv
-        
     - name: Build the stack
       run: docker-compose up --exit-code-from app
     - name: Run tests
