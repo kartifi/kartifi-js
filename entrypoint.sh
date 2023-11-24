@@ -1,9 +1,7 @@
 #!/bin/bash
-
 WORKDIR=/app
 
 cd $WORKDIR
-
 
 if [ "$NODE_ENV" = "development" ];
 then
