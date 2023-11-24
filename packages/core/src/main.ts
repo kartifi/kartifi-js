@@ -6,7 +6,6 @@ import { config } from "dotenv";
 import { setUpPlugins } from "./loaders/plugins";
 
 export async function bootLoaders() {
-    console.log(process.env);
 
     config();
     // config({ path: `.env.${process.env.NODE_ENV}` });
