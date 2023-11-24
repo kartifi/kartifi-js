@@ -10,11 +10,11 @@ services:
       - ./:/app
       - exclude:/app/node_modules/
     environment:
-      NODE_ENV: docker
+      NODE_ENV: development
       POSTGRESQL_HOST: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
-      POSTGRES_DB: kartify
+      POSTGRES_DB: kartifi
   postgres:
     image: postgres:bookworm
     volumes:
@@ -22,7 +22,7 @@ services:
     environment:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
-      POSTGRES_DB: kartify 
+      POSTGRES_DB: kartifi
 
 volumes:
   kartify-postgres-data:
