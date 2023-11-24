@@ -8,13 +8,12 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      DOTENV_KEY: ${{ secrets.DOTENV_KEY }}
     steps:
     - uses: actions/checkout@v3
     - name: Build the stack
       run: docker-compose up --exit-code-from app
-      env:
-        DOTENV_KEY: ${{ secrets.DOTENV_KEY }}
-      
     - name: Run tests
       run: docker-compose exec -T -w /app/packages/frontend app /bin/bash -c "yarn run test:play"
     - name: Stop containers
