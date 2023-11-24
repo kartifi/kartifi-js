@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     tty: true
-    command: /bin/bash entrypoint.sh
+    command: pm2-runtime start pm2.config.js
     # healthcheck:
     #   test: ["CMD", "curl", "-f", "localhost:3000/products"]
     #   interval: 1m30s
