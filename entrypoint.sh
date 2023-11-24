@@ -1,5 +1,7 @@
 #!/bin/bash
+
 source ~/.bashrc
+printf 'Welcome:'
 WORKDIR=/app
 
 cd $WORKDIR
