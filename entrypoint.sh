@@ -4,9 +4,9 @@ source ~/.bashrc
 printf 'Welcome:'
 WORKDIR=/app
 
-cd $WORKDIR/packages/core/kartifi-plugin-stripe
+cd $WORKDIR/packages/kartifi-plugin-stripe
 npx tsc -b
-cd $WORKDIR/packages/core/kartifi-plugin-shippo
+cd $WORKDIR/packages/kartifi-plugin-shippo
 npx tsc -b
 cd $WORKDIR
 yarn install
