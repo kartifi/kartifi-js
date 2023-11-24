@@ -15,9 +15,9 @@ jobs:
     - name: Get enivronment variables
       run: |
         printenv
-        echo "DOTENV_KEY=${{ secrets.DOTENV_KEY }}" >> .env
+        
     - name: Build the stack
-      run: docker-compose up -e DOTENV_KEY --exit-code-from app
+      run: docker-compose up --exit-code-from app
     - name: Run tests
       run: docker-compose exec -T -w /app/packages/frontend app /bin/bash -c "yarn run test:play"
     - name: Stop containers
