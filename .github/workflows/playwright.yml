@@ -16,7 +16,7 @@ jobs:
     - name: Docker Compose version
       run: docker compose --version
     - name: Build the stack
-      run: docker compose up --detach --wait
+      run: docker compose up --build --detach --wait
     - name: Run tests
       run: docker-compose exec -T -w /app/packages/frontend app /bin/bash -c "yarn run test:play"
     - name: Stop containers
