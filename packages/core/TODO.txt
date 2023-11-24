@@ -23,4 +23,15 @@ TODO:
 - [ ] Multi-tenancy
 
 - [ ] Deployment
+
+- [ ] Returns and Refunds
+
+- [ ] API rate limiting, pagination, filtering, sorting, and versioning
+
+- [ ] Search
+
+- [ ] Inventory management
+
+- [ ] Gift cards and discount codes
+
     
