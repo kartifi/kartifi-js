@@ -3,7 +3,7 @@ module.exports = {
         {
             name: "core",
             script: "yarn",
-            args: "dev",
+            args: "start",
             cwd: "packages/core",
 
         },

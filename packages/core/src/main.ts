@@ -6,7 +6,6 @@ import { config } from "dotenv";
 import { setUpPlugins } from "./loaders/plugins";
 
 export async function bootLoaders() {
-
     config();
     // config({ path: `.env.${process.env.NODE_ENV}` });
     setupEmail();
@@ -16,8 +15,8 @@ export async function bootLoaders() {
 
 }
 
-if (process.env.NODE_ENV !== "test") {
-    bootLoaders().then(() => {
-        console.log("Boot loaders complete");
-    })
-}
+// if (process.env.NODE_ENV !== "test") {
+bootLoaders().then(() => {
+    console.log("Boot loaders complete");
+})
+// }

@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     tty: true
-    command: nodemon packages/core/dist/src/main.js
+    command: /bin/sh entrypoint.sh
     depends_on:
       - db
     # healthcheck:
