@@ -7,10 +7,10 @@ import { TextInput, Label, Textarea, Button } from "flowbite-react";
 
 export function ProductForm({ data }) {
 
-    const productOptions = mainStore((state) => state.options);
-    const variants = mainStore((state) => state.variants);
-    const setOptions = mainStore((state) => state.setOptions);
-    const setVariants = mainStore((state) => state.setVariants);
+    const productOptions = mainStore((state: any) => state.options);
+    const variants = mainStore((state: any) => state.variants);
+    const setOptions = mainStore((state: any) => state.setOptions);
+    const setVariants = mainStore((state: any) => state.setVariants);
     const [message, setMessage] = useState('');
 
     useEffect(() => {

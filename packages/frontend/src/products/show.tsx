@@ -1,21 +1,24 @@
 
-import { useFetcher, useLoaderData, useNavigate, useSubmit } from "react-router-dom";
-import config from "../config";
+import { useFetcher, useLoaderData, useNavigate } from "react-router-dom";
 import { useCallback, useEffect, useState } from "react";
 import { Button, Label, Select, TextInput } from "flowbite-react";
 import { mainStore } from "../store";
 
 export function ShowProduct() {
     const navigate = useNavigate();
-    var selectedOptions = [];
+    var selectedOptions: any = [];
 
-    const allData = useLoaderData();
+    const allData: any = useLoaderData();
     const data = allData.product;
     // const cart = allData.cart;
-    const cart = mainStore((state) => state.cart);
-    const [oldLineItem, setOldLineItem] = useState();
+    const cart = mainStore((state: any) => state.cart);
+    const [oldLineItem, setOldLineItem] = useState({
+        id: 0
+    });
 
-    const [selectedVariant, setSelectedVariant] = useState();
+    const [selectedVariant, setSelectedVariant] = useState({
+        id: 0
+    });
     const lineItemFetcher = useFetcher();
     // const cartSubmit = useSubmit();
     const cartFetcher = useFetcher();
@@ -107,7 +110,7 @@ export function ShowProduct() {
                 </div>
             </div>
             <div className="w-1/4 pl-4">
-                <lineItemFetcher.Form action={oldLineItem ? `/line-items/${oldLineItem.id}/edit` : '/line-items'} method="POST">
+                <lineItemFetcher.Form action={oldLineItem.id > 0 ? `/line-items/${oldLineItem.id}/edit` : '/line-items'} method="POST">
                     <div className="w-2/4" >
                         <div className="mb-2 block">
                             <Label htmlFor="quantity" value="Quantity" />

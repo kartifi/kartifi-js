@@ -1,13 +1,15 @@
 #!/bin/bash
-
 source ~/.bashrc
-printf 'Welcome:'
 WORKDIR=/app
 
 cd $WORKDIR
 yarn install
-yarn run build:stripe
-yarn run build:shippo
-yarn install
+# yarn install
 
-pm2-runtime start pm2.config.js
+if [ "$NODE_ENV" = "development" ];
+then
+  pm2-runtime start pm2.dev.config.js
+else
+  yarn workspaces run build
+  pm2-runtime start pm2.config.js
+fi

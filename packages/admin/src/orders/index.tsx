@@ -1,9 +1,8 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import 'react-data-grid/lib/styles.css';
 import DataGrid, { SelectColumn } from 'react-data-grid';
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button } from "flowbite-react";
 import { useFetcher } from "react-router-dom";
 
 interface Row {
@@ -20,7 +19,7 @@ function rowKeyGetter(row: Row) {
 
 export function ListOrders() {
     // let width, columns
-    const data = useLoaderData();
+    const data: any = useLoaderData();
 
     const [selectedRows, setSelectedRows] = useState((): ReadonlySet<number> => new Set());
     const [rows, setRows] = useState(data);
@@ -56,7 +55,7 @@ export function ListOrders() {
         }
     }, [orderDelete])
 
-    const showOrder = (args, e) => navigate(`/orders/${args.row.id}`)
+    const showOrder = (args) => navigate(`/orders/${args.row.id}`)
 
     return (
         <>

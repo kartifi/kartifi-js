@@ -1,11 +1,10 @@
-import { redirect } from "react-router-dom";
 import config from "../../config";
 
 export let DeleteOptionRoute = {
     path: "variants/:id/delete",
 
 
-    action: async ({ params, request }) => {
+    action: async ({ params }) => {
 
 
 

@@ -4,9 +4,9 @@ import { mainStore } from "../store";
 
 export function Shipping({ data }) {
     const [address, setAddress] = useState()
-    const [rates, setRates] = useState();
-    const setShipping = mainStore((state) => state.setShipping);
-    const setShippingId = mainStore((state) => state.setShippingId);
+    const [rates, setRates] = useState({ rates: [] });
+    const setShipping = mainStore((state: any) => state.setShipping);
+    const setShippingId = mainStore((state: any) => state.setShippingId);
     useEffect(() => {
         setAddress(data.address)
     }, [data])
@@ -26,7 +26,7 @@ export function Shipping({ data }) {
     }, [address])
 
     const handleShippingChange = useCallback((e) => {
-        let rate = rates.rates.find((rate: any) => rate.object_id === e.target.value);
+        let rate: any = rates.rates.find((rate: any) => rate.object_id === e.target.value);
         setShipping(parseFloat(rate.amount));
         setShippingId(e.target.value);
     }, [rates])

@@ -1,4 +1,3 @@
-import { redirect, useSearchParams } from "react-router-dom";
 import config from "../../config";
 import { EditOption } from "../edit";
 

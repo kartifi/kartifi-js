@@ -1,4 +1,3 @@
-import { redirect, useSearchParams } from "react-router-dom";
 import config from "../../config";
 
 
@@ -14,7 +13,7 @@ export let EditOptionRoute = {
 
 
 
-        let variantData = await fetch(config.BASE_URL + `/variants/${params.id}/edit`, {
+        await fetch(config.BASE_URL + `/variants/${params.id}/edit`, {
             method: "PUT",
             credentials: "include",
             body: formData

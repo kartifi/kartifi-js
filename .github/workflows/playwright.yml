@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the stack
-      run: docker-compose up --exit-code-from app
+      run: docker-compose up -d --wait
     - name: Run tests
       run: docker-compose exec -T -w /app/packages/frontend app /bin/bash -c "yarn run test:play"
     - name: Stop containers

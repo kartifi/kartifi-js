@@ -4,7 +4,7 @@ export let DeleteOptionRoute = {
     path: "options/:id/delete",
 
 
-    action: async ({ params, request }) => {
+    action: async ({ params }) => {
 
 
 

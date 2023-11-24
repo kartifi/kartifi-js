@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { Form, useFetcher } from "react-router-dom";
+import { useFetcher } from "react-router-dom";
 import { mainStore } from "../store";
 import { Modal, Button, TextInput, Label } from "flowbite-react";
 
@@ -9,8 +9,8 @@ export function OptionForm({ data }) {
     const optionDelete = useFetcher();
     const [option, setOption] = useState({ id: -1, key: '', value: '', method: "POST", action: '/options/new' })
     // const [productOptions, setProductOptions] = useState(data.options);
-    const productOptions = mainStore((state) => state.options);
-    const setProductOptions = mainStore((state) => state.setOptions);
+    const productOptions = mainStore((state: any) => state.options);
+    const setProductOptions = mainStore((state: any) => state.setOptions);
 
     useEffect(() => {
         if (optionFetcher.data) {
@@ -84,7 +84,7 @@ export function OptionForm({ data }) {
                 <Modal.Header></Modal.Header>
                 <Modal.Body>
                     <optionFetcher.Form
-                        method={option.method}
+                        method={option.method as any}
                         action={option.action}
                         key={`form-${option.id}`}
                     >

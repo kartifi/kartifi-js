@@ -2,7 +2,7 @@ import { Card } from "flowbite-react";
 import { Link, useLoaderData } from "react-router-dom";
 
 export function ListProducts() {
-    const data = useLoaderData();
+    const data: any = useLoaderData();
 
     return (
         <>

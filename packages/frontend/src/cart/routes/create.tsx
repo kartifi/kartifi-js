@@ -7,7 +7,7 @@ import config from "../../config";
 
 export const CartCreateRoute = {
     path: "/cart/new",
-    action: async ({ params, request }) => {
+    action: async ({ request }) => {
         // let formData = await request.formData();
 
 

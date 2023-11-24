@@ -3,8 +3,8 @@ import { CheckoutAddress } from "./address";
 import { mainStore } from "../store";
 
 export function Checkout() {
-    let data = useLoaderData();
-    let cart = mainStore((state) => state.cart);
+    let data: any = useLoaderData();
+    let cart = mainStore((state: any) => state.cart);
     data.cart = cart;
     return (
         <>

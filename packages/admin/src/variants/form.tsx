@@ -9,9 +9,9 @@ export function VariantForm({ data }) {
     const variantFetcher = useFetcher();
     const variantDelete = useFetcher();
     const [variant, setVariant] = useState({ id: -1, title: '', description: '', price: '', salePrice: '', method: "POST", action: '/variants/new' })
-    const variants = mainStore((state) => state.variants);
-    const setVariants = mainStore((state) => state.setVariants);
-    const options = mainStore((state) => state.options);
+    const variants = mainStore((state: any) => state.variants);
+    const setVariants = mainStore((state: any) => state.setVariants);
+    const options = mainStore((state: any) => state.options);
     const [showModal, setShowModal] = useState(false);
 
     const addVariantHandler = useCallback((e) => {
@@ -85,7 +85,7 @@ export function VariantForm({ data }) {
                 <Modal.Body>
                     <variantFetcher.Form
                         encType={process.env.NODE_ENV !== 'test' ? "multipart/form-data" : "application/x-www-form-urlencoded"}
-                        method={variant.method}
+                        method={variant.method as any}
                         action={variant.action}
                         key={`form-${variant.id}`}
                     >

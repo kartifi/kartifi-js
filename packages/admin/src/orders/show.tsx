@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom"
 
 export function ShowOrder() {
-    const data = useLoaderData();
+    const data: any = useLoaderData();
 
     return (
         <div>

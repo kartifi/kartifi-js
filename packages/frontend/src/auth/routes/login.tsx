@@ -5,7 +5,7 @@ import { Login } from "../login";
 export const LoginRoute = {
     path: '/login',
     element: <Login />,
-    action: async ({ params, request }) => {
+    action: async ({ request }) => {
         let formData = await request.formData();
         let jsonData = Object.fromEntries(formData.entries());
         let response = await fetch(config.BASE_URL + "/customers/login", {

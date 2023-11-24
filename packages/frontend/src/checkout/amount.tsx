@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { PriceCalculation } from "../utils/price-calculation";
 import { useFetcher } from "react-router-dom";
-import { Button } from "flowbite-react";
-import { Shipping } from "./shipping";
 
 export function Amount({ data }) {
     const fetcher = useFetcher();

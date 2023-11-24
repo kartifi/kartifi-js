@@ -12,7 +12,6 @@
     "packages/kartifi-plugin-shippo"
   ],
   "scripts": {
-    "build:stripe": "tsc -p packages/kartifi-plugin-stripe/tsconfig.json",
-    "build:shippo": "tsc -p packages/kartifi-plugin-shippo/tsconfig.json"
+    "build:all": "yarn workspaces run build"
   }
 }

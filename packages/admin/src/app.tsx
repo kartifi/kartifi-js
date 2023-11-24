@@ -1,5 +1,4 @@
 import { Layout } from './layout';
-import { DarkThemeToggle, Flowbite } from "flowbite-react";
 
 import { IndexProductsRoute } from './products/routes';
 import { NewProductRoute } from './products/routes/new';

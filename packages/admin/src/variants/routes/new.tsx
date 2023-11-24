@@ -10,7 +10,7 @@ export let NewVariantRoute = {
     (request);
 
     let formData = await request.formData();
-    let variantOptions = [];
+    let variantOptions: any = [];
     for (let [key, value] of formData.entries()) {
       if (!keys.includes(key)) {
         let variantOption = await fetch(config.BASE_URL + "/variant-options", {

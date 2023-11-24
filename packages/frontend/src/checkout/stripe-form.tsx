@@ -1,7 +1,7 @@
 import { useStripe, useElements, PaymentElement } from "@stripe/react-stripe-js";
 import { Button } from "flowbite-react";
 
-export function StripeForm({ data }) {
+export function StripeForm({ }) {
     const stripe = useStripe();
     const elements = useElements();
 
@@ -14,7 +14,7 @@ export function StripeForm({ data }) {
             return;
         }
 
-        const { error } = await stripe.confirmPayment({
+        await stripe.confirmPayment({
             elements,
             confirmParams: {
                 // TODO: Make sure to change this to your payment completion page

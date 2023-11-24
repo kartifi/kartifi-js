@@ -3,29 +3,37 @@ module.exports = {
         {
             name: "core",
             script: "yarn",
-            args: "dev",
+            args: "start",
             cwd: "packages/core",
-            env: {
-                NODE_ENV: "development",
-            },
+
         },
         {
             name: "frontend",
             script: "yarn",
-            args: "dev",
+            args: "preview",
             cwd: "packages/frontend",
-            env: {
-                NODE_ENV: "development",
-            },
+
         },
         {
             name: "admin",
             script: "yarn",
-            args: "dev",
+            args: "preview",
             cwd: "packages/admin",
-            env: {
-                NODE_ENV: "development",
-            },
-        }
+
+        },
+        // {
+        //     name: "stripe",
+        //     script: "yarn",
+        //     args: "dev",
+        //     cwd: "packages/kartifi-plugin-stripe",
+
+        // },
+        // {
+        //     name: "shippo",
+        //     script: "yarn",
+        //     args: "dev",
+        //     cwd: "packages/kartifi-plugin-shippo",
+
+        // }
     ]
 }

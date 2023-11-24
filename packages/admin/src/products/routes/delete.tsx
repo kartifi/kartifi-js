@@ -4,11 +4,11 @@ export let DeleteProductRoute = {
     path: "products/delete",
 
 
-    action: async ({ params, request }) => {
+    action: async ({ request }) => {
 
         let formData = await request.formData();
         let ids = JSON.parse(formData.get("body"));
-        let allPromises = []
+        let allPromises: any = []
 
         for (let id of ids) {
             let res = fetch(config.BASE_URL + `/products/${id}`, {

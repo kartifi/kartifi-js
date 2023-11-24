@@ -6,8 +6,8 @@ import config from "../config";
 import { useLocation } from "react-router-dom";
 
 export function Nav() {
-    let cart = mainStore((state) => state.cart);
-    let setCart = mainStore((state) => state.setCart);
+    let cart = mainStore((state: any) => state.cart);
+    let setCart = mainStore((state: any) => state.setCart);
     const location = useLocation();
     useEffect(() => {
 

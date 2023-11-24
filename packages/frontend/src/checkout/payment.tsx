@@ -12,7 +12,7 @@ export function Payment({ data }) {
         <>
             <h2>Payment</h2>
             <Elements stripe={stripePromise} options={{ clientSecret: data.clientSecret }}>
-                <StripeForm data={data} />
+                <StripeForm />
             </Elements>
         </>
     )

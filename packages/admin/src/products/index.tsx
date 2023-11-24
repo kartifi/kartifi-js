@@ -19,7 +19,7 @@ function rowKeyGetter(row: Row) {
 
 export function ListProducts() {
     // let width, columns
-    const data = useLoaderData();
+    const data: any = useLoaderData();
 
     const [selectedRows, setSelectedRows] = useState((): ReadonlySet<number> => new Set());
     const [rows, setRows] = useState(data);

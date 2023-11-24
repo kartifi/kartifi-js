@@ -3,7 +3,7 @@ import config from "../../config";
 export const CreateLineItemRoute = {
     path: "/line-items",
 
-    action: async ({ params, request }) => {
+    action: async ({ request }) => {
         let formData = await request.formData();
         let variantId = formData.get('variantId');
 

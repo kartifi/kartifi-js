@@ -1,9 +1,8 @@
-import { Button } from "flowbite-react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { mainStore } from "../store";
 export function Cart() {
     // let data = useLoaderData();
-    const cart = mainStore((state) => state.cart);
+    const cart = mainStore((state: any) => state.cart);
 
 
     return (

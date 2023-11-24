@@ -9,13 +9,19 @@ import { mainStore } from "../store";
 
 
 export function CheckoutAddress({ data }) {
-    const shipping = mainStore((state) => state.shipping);
-    const shippingId = mainStore((state) => state.shippingId);
-    const [shippingAddresses, setShippingAddresses] = useState();
-    const [shippingAddress, setShippingAddress] = useState();
+    const shipping = mainStore((state: any) => state.shipping);
+    const shippingId = mainStore((state: any) => state.shippingId);
+    const [shippingAddresses, setShippingAddresses] = useState([]);
+    const [shippingAddress, setShippingAddress] = useState({
+        id: 0,
+        title: "",
+    });
 
-    const [billingAddresses, setSBillingAddresses] = useState();
-    const [billingAddress, setBillingAddress] = useState();
+    const [billingAddresses, setSBillingAddresses] = useState([]);
+    const [billingAddress, setBillingAddress] = useState({
+        id: 0,
+        title: "",
+    });
 
     // let billingAddresses = data.addresses.filter((address: any) => address.type === "billing");
     // let billingAddress = billingAddresses.find((address: any) => address.sticky === true) || billingAddresses[0];

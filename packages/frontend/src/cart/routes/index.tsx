@@ -1,4 +1,3 @@
-import config from "../../config";
 import { Cart } from "..";
 
 export const CartIndexRoute = {

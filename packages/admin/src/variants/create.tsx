@@ -1,6 +1,6 @@
-import { ProductForm } from "./form"
-export function NewProduct() {
+import { VariantForm } from "./form"
+export function NewVariant() {
     return (
-        <ProductForm data={{}} />
+        <VariantForm data={{}} />
     )
 } 
