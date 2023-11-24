@@ -13,7 +13,7 @@ jobs:
     - name: Build the stack
       run: docker-compose up -d --build
     - name: Run tests
-      run: docker-compose exec -t -w /app/packages/frontend app yarn run test:play
+      run: docker-compose exec -T -w /app/packages/frontend app yarn run test:play
     - name: Stop containers
       if: always()
       run: docker-compose down
