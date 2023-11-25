@@ -7,15 +7,19 @@ test('Buy a product', async ({ page }) => {
 
   await page.selectOption('#select-Color', 'Red');
   await page.selectOption('#select-Size', 'Small');
-  await page.click('text=Add to cart');
+  await page.getByRole('button', { name: 'Add to cart' }).click();
+  // await page.click('text=Add to cart');
+
 
   await page.waitForSelector('text=Checkoout');
-  await page.click('text=Checkoout');
+  await page.getByRole('button', { name: 'Checkoout' }).click();
+  // await page.click('text=Checkoout');
 
   await page.waitForSelector('#email');
   await page.fill('#email', 'umair@gmail.com');
   await page.fill('#password', '12345678');
-  await page.click('text=Login');
+  await page.getByRole('button', { name: 'Login' }).click();
+  // await page.click('text=Login');
 
   await page.waitForSelector('h1');
   const title = await page.$('#title');
@@ -28,7 +32,8 @@ test('Buy a product', async ({ page }) => {
     await page.selectOption('#state', 'California');
     await page.selectOption('#city', 'Walnut');
     await page.fill('#zipCode', '91789');
-    await page.click('text=Create');
+    // await page.click('text=Create');
+    await page.getByRole('button', { name: 'Create' }).click();
 
 
   }
