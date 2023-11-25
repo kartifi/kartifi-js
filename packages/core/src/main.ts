@@ -6,7 +6,7 @@ import { config } from "dotenv";
 import { setUpPlugins } from "./loaders/plugins";
 
 export async function bootLoaders() {
-    config();
+    process.env.DOTENV_KEY ? config() : config({ path: '.env' });
     // config({ path: `.env.${process.env.NODE_ENV}` });
     setupEmail();
     await setupDb();
