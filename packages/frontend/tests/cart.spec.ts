@@ -52,6 +52,8 @@ test('Buy a product', async ({ page }) => {
   // await page.getByRole('button', { name: 'Place Order' }).click();
   await page.getByTestId('order').click();
 
+  // await page.screenshot();
+
   await page.waitForSelector('h3');
 
   expect(page.getByRole('heading', { name: 'Thanks for your order!' })).toBeDefined();

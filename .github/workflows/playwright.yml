@@ -23,9 +23,7 @@ jobs:
         curl --retry-all-errors --retry 10 --retry-delay 10 --retry-max-time 300 --show-error 0.0.0.0:3000/products 
     - name: Run tests
       run: docker-compose exec -T -w /app/packages/frontend app /bin/bash -c "yarn run test:play"
-    - name: Stop containers
-      if: always()
-      run: docker-compose down
+
     # - name: Install dependencies
     #   run: yarn install --immutable --immutable-cache --check-cache
     # - name: Install Playwright Browsers
@@ -33,9 +31,12 @@ jobs:
     # - name: Run Playwright tests
     #   run: npx playwright test
     #   working-directory: packages/frontend
-    # - uses: actions/upload-artifact@v3
-    #   if: always()
-    #   with:
-    #     name: playwright-report
-    #     path: playwright-report/
-    #     retention-days: 30
+    - uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: playwright-report
+        path: playwright-report/
+        retention-days: 30
+    - name: Stop containers
+      if: always()
+      run: docker-compose down
