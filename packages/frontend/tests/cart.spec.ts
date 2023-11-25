@@ -47,6 +47,10 @@ test('Buy a product', async ({ page }) => {
   await frame.locator('#Field-numberInput').fill('4242424242424242');
   await frame.locator('#Field-expiryInput').fill('1227');
   await frame.locator('#Field-cvcInput').fill('123');
+  const zipInput = frame.locator('#Field-postalCodeInput')
+  if (zipInput) {
+    await zipInput.fill('10008');
+  }
 
 
   // await page.getByRole('button', { name: 'Place Order' }).click();
