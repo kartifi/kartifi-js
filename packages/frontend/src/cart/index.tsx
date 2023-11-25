@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { mainStore } from "../store";
+import { Button } from "flowbite-react";
 export function Cart() {
     // let data = useLoaderData();
     const cart = mainStore((state: any) => state.cart);
@@ -14,7 +15,7 @@ export function Cart() {
                     <p>Quantity: {lineItem.quantity}</p>
                 </div>
             ))}
-            <Link to="/checkout">Checkoout</Link>
+            <Button><Link to="/checkout">Checkout</Link></Button>
         </div>
     )
 }

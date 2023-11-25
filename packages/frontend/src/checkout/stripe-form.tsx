@@ -29,7 +29,7 @@ export function StripeForm({ }) {
         <>
             <form onSubmit={handleSubmit}>
                 <PaymentElement />
-                <Button className="mt-4" type="submit">
+                <Button data-testid="order" className="mt-4" type="submit">
                     Place Order
                 </Button>
             </form>

@@ -7,8 +7,11 @@ export function Shipping({ data }) {
     const [rates, setRates] = useState({ rates: [] });
     const setShipping = mainStore((state: any) => state.setShipping);
     const setShippingId = mainStore((state: any) => state.setShippingId);
+
     useEffect(() => {
-        setAddress(data.address)
+        if (data.address && data.address.id > 0) {
+            setAddress(data.address)
+        }
     }, [data])
 
     useEffect(() => {

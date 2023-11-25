@@ -39,7 +39,11 @@ export function ShowProduct() {
                 console.log(variant);
                 setSelectedVariant(variant);
 
-                setOldLineItem(cart.lineItems.find((lineItem) => lineItem.variant.id === variant.id));
+                let old = cart.lineItems.find((lineItem) => lineItem.variant.id === variant.id);
+
+                if (old) {
+                    setOldLineItem(old);
+                }
                 setImage(variant.image.src);
             }
             selectedOptions = [];

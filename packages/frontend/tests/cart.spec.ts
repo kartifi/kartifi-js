@@ -11,8 +11,8 @@ test('Buy a product', async ({ page }) => {
   // await page.click('text=Add to cart');
 
 
-  await page.waitForSelector('text=Checkoout');
-  await page.getByRole('button', { name: 'Checkoout' }).click();
+  // await page.waitForSelector('text=Checkout');
+  await page.getByRole('button', { name: 'Checkout' }).click();
   // await page.click('text=Checkoout');
 
   await page.waitForSelector('#email');
@@ -49,7 +49,8 @@ test('Buy a product', async ({ page }) => {
   await frame.locator('#Field-cvcInput').fill('123');
 
 
-  await page.getByRole('button', { name: 'Place Order' }).click();
+  // await page.getByRole('button', { name: 'Place Order' }).click();
+  await page.getByTestId('order').click();
 
   await page.waitForSelector('h3');
 

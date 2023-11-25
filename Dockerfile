@@ -5,10 +5,10 @@ FROM mcr.microsoft.com/playwright:v1.40.0-jammy
 RUN npm install -g yarn \
     && yarn global add pm2 typescript
 
-WORKDIR /app
+# WORKDIR /app
 
-COPY . .
+# COPY . .
 
-RUN yarn install --frozen-lockfile
+# RUN yarn install --frozen-lockfile
 
-RUN yarn workspaces run build
+# RUN yarn workspaces run build

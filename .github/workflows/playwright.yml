@@ -14,13 +14,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the stack
-      run: docker compose up --detach
+      run: docker compose up --detach --build
     - name: Check for running containers
       run: |
         # docker compose ps
         # netstat -tulpn
         # docker compose logs -f app
-        curl --retry-all-errors --retry 10 --retry-delay 10 --retry-max-time 60 --show-error 0.0.0.0:3000/products 
+        curl --retry-all-errors --retry 10 --retry-delay 10 --retry-max-time 300 --show-error 0.0.0.0:3000/products 
     - name: Run tests
       run: docker-compose exec -T -w /app/packages/frontend app /bin/bash -c "yarn run test:play"
     - name: Stop containers
