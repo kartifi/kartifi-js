@@ -41,7 +41,7 @@ jobs:
       if: always()
       with:
         name: test-results
-        path: test-results/
+        path: packages/frontend/test-results/
         retention-days: 30
     - name: Stop containers
       if: always()
